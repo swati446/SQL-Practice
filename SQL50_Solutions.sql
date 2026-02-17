@@ -72,3 +72,47 @@ FROM Employees e
 LEFT JOIN EmployeeUNI u
 ON e.id = u.id;
 
+
+
+/* ====================================================
+   DAY 2 – AGGREGATION (GROUP BY + HAVING + JOIN)
+   ==================================================== */
+
+
+/* 7. 586 - Customer Placing the Largest Number of Orders
+   Concept: GROUP BY + COUNT + ORDER BY + LIMIT
+*/
+
+SELECT customer_number
+FROM Orders
+GROUP BY customer_number
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+
+
+/* 8. 596 - Classes More Than 5 Students
+   Concept: GROUP BY + HAVING
+*/
+
+SELECT class
+FROM Courses
+GROUP BY class
+HAVING COUNT(*) >= 5;
+
+
+
+/* 9. 1251 - Average Selling Price
+   Concept: JOIN + GROUP BY + AVG
+*/
+
+SELECT p.product_id,
+       ROUND(SUM(p.price * u.units) / SUM(u.units), 2) AS average_price
+FROM Prices p
+JOIN UnitsSold u
+ON p.product_id = u.product_id
+AND u.purchase_date BETWEEN p.start_date AND p.end_date
+GROUP BY p.product_id;
+
+
+
