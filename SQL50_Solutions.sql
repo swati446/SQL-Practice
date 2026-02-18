@@ -115,4 +115,36 @@ AND u.purchase_date BETWEEN p.start_date AND p.end_date
 GROUP BY p.product_id;
 
 
+/* ====================================================
+   DAY 3 – JOINS PRACTICE
+   ==================================================== */
+
+
+/* ----------------------------------------------------
+   175. Combine Two Tables
+   Concept: LEFT JOIN
+   ---------------------------------------------------- */
+
+SELECT p.firstName, 
+       p.lastName, 
+       a.city, 
+       a.state
+FROM Person p
+LEFT JOIN Address a
+ON p.personId = a.personId;
+
+
+
+/* ----------------------------------------------------
+   181. Employees Earning More Than Their Managers
+   Concept: SELF JOIN (INNER JOIN)
+   ---------------------------------------------------- */
+
+SELECT e.name
+FROM Employee e
+INNER JOIN Employee m
+ON e.managerId = m.id
+WHERE e.salary > m.salary;
+
+
 
