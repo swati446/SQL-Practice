@@ -148,3 +148,45 @@ WHERE e.salary > m.salary;
 
 
 
+-- ============================================
+-- DAY 4 : SUBQUERIES & CORRELATED SUBQUERIES
+-- ============================================
+
+-- Problem 1: Employees earning more than average salary
+-- Concept: Non-correlated subquery
+
+SELECT name
+FROM Employee
+WHERE salary > (
+    SELECT AVG(salary) FROM Employee
+);
+
+-- --------------------------------------------
+
+-- Problem 2: Employees earning more than department average
+-- Concept: Correlated subquery
+
+SELECT e1.name, e1.departmentId
+FROM Employee e1
+WHERE salary > (
+    SELECT AVG(e2.salary)
+    FROM Employee e2
+    WHERE e1.departmentId = e2.departmentId
+);
+
+-- --------------------------------------------
+
+-- Problem 3: Percentage of Users Attended a Contest
+-- Concept: GROUP BY + Subquery + ROUND
+
+SELECT 
+    r.contest_id,
+    ROUND(COUNT(r.user_id) * 100.0 / 
+          (SELECT COUNT(*) FROM Users), 2) AS percentage
+FROM Register r
+GROUP BY r.contest_id
+ORDER BY percentage DESC, r.contest_id ASC;
+
+
+
+
