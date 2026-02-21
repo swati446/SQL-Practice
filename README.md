@@ -43,3 +43,25 @@ This repository contains my solutions to the SQL 50 challenge from LeetCode.
 ---
 
 Consistency > Motivation.
+
+## 📅 Day 5 – CASE WHEN & Aggregations
+
+### 📌 Topics Learned:
+- CASE WHEN statements
+- Conditional counting using SUM()
+- Percentage calculation
+- Avoiding integer division using 100.0
+- ROUND() function
+
+### 💡 Key Learning:
+- CASE returns value based on condition.
+- GROUP BY does not create missing categories.
+- Use 100.0 to avoid integer division in percentage calculations.
+
+### 🔥 LeetCode Problems Solved:
+- 1211. Queries Quality and Percentage
+- Practice questions on salary categorization
+- Aggregation with conditional logic
+
+---
+Consistency > Motivation
