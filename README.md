@@ -65,3 +65,24 @@ Consistency > Motivation.
 
 ---
 Consistency > Motivation
+=======
+
+## 📅 Day 6 – Window Functions & Advanced Aggregations
+
+### ✅ Problems Solved:
+- 1729 – Find Followers Count
+- 180 – Consecutive Numbers
+- 2356 – Number of Unique Subjects Taught by Each Teacher
+
+### 📌 Concepts Learned:
+- Using LAG() for consecutive detection
+- DISTINCT with COUNT()
+- Window functions vs GROUP BY
+- When NOT to use GROUP BY (consecutive logic case)
+
+### 💡 Key Takeaway:
+Window functions allow row-level comparison without reducing rows.
+
+---
+Consistency > Motivation
+>>>>>>> 9c75db8 (Day 6: Solved 1729, 180, 2356 | Window functions & Aggregations)
